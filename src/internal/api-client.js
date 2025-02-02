@@ -113,7 +113,7 @@ async function createPagesDeployment({ githubToken, artifactId, buildVersion, id
 
   const payload = {
     artifact_id: artifactId,
-    pages_build_version: buildVersion,
+    pages_build_version: `${buildVersion}-${artifactId}`,
     oidc_token: idToken
   }
   if (isPreview === true) {

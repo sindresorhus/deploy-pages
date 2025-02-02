@@ -5,7 +5,7 @@ function getRequiredVars() {
   return {
     workflowRun: process.env.GITHUB_RUN_ID,
     repositoryNwo: process.env.GITHUB_REPOSITORY,
-    buildVersion: `${process.env.GITHUB_SHA}-${process.env.GITHUB_RUN_ID}`,
+    buildVersion: process.env.GITHUB_SHA,
     buildActor: process.env.GITHUB_ACTOR,
     actionsId: process.env.GITHUB_ACTION,
     githubToken: core.getInput('token'),
