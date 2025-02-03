@@ -108,12 +108,12 @@ async function getArtifactMetadata({ artifactName }) {
   }
 }
 
-async function createPagesDeployment({ githubToken, artifactId, buildVersion, idToken, isPreview = false }) {
+async function createPagesDeployment({ githubToken, artifactId, idToken, isPreview = false }) {
   const octokit = github.getOctokit(githubToken)
 
   const payload = {
     artifact_id: artifactId,
-    pages_build_version: `${buildVersion}-${artifactId}`,
+    pages_build_version: `${artifactId}`,
     oidc_token: idToken
   }
   if (isPreview === true) {
